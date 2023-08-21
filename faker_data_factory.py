@@ -85,6 +85,7 @@ class FakerDataFactory():
              'Company', 'Date of Birth', 'Website', 'Username', 'Text', 'Country', 'City', 'State','uuid_val', 'ssn', 'credit_card']
         )
         df.show()
+        df.write.csv("faker_job.csv")
 
 faker_job = FakerDataFactory(quants=10)
 faker_job.test_synthetic_data()

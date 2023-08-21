@@ -20,9 +20,11 @@ class MimesisDataFactory:
             data.append((firstname, lastname, address, email, phone, age))
         return data
 
-    def test_synthetic_data(data):
+    def test_synthetic_data(self, data):
         df = pd.DataFrame(data, columns=['First Name', 'Last Name', 'Address', 'Email', 'Phone', 'Age'])
         return df
 
 data_generator = MimesisDataFactory(200)
-print(data_generator.test_synthetic_data())
+fake_user_data_list = data_generator.generate_synthetic_data()
+fake_user_data = data_generator.test_synthetic_data(fake_user_data_list)
+fake_user_data.to_csv("mimesis_user_data.csv")
