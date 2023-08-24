@@ -9,7 +9,7 @@ from multiprocessing import freeze_support
 input_data = "train.csv"
 
 mode = 'bayesian_network_mode'
-description_file = "{mode}_description.json"
+description_file = f"{mode}_description.json"
 synthetic_data = "synthoutput.csv"
 
 # An attribute is categorical if its number of unique values is less than this threshold

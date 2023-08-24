@@ -36,6 +36,7 @@ class SyntheticDataBuilder(Session):
         synthetic_data = ctgan.sample(self.quants)
         synthetic_df = spark.createDataFrame(synthetic_data)
         synthetic_df.show()
+        synthetic_df.write.csv("ctgan_generated.csv")
 
 
 syn = SyntheticDataBuilder(1000)
